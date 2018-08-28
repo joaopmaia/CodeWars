@@ -1,0 +1,12 @@
+import re
+def pig_it(text):
+    arr = text.split(" ")
+    arr2 = ""
+    for c in arr:        
+        if re.match(r'^\w+$', c):
+            c = list(c)
+            c.append(c[0])
+            c.append("ay")
+            c.remove(c[0])
+        arr2 += ''.join(c) + " "
+    return arr2.strip()
